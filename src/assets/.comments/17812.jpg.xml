@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Real estate agent with house model and keys</caption>
+  <note>Real estate agent with house model and keys</note>
+  <place/>
+  <categories>
+    <category value="agent"/>
+    <category value="architect"/>
+    <category value="architecture"/>
+    <category value="business"/>
+    <category value="buy"/>
+    <category value="concept"/>
+    <category value="estate"/>
+    <category value="giving"/>
+    <category value="hand"/>
+    <category value="holding"/>
+    <category value="home"/>
+    <category value="house"/>
+    <category value="housing"/>
+    <category value="human"/>
+    <category value="insurance"/>
+    <category value="investment"/>
+    <category value="key"/>
+    <category value="loan"/>
+    <category value="model"/>
+    <category value="mortgage"/>
+    <category value="new"/>
+    <category value="property"/>
+    <category value="purchase"/>
+    <category value="real"/>
+    <category value="residential"/>
+    <category value="sale"/>
+    <category value="selling"/>
+    <category value="small"/>
+    <category value="structure"/>
+    <category value="symbol"/>
+  </categories>
+</comment>
