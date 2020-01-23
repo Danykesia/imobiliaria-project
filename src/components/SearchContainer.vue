@@ -25,6 +25,7 @@ input {
   color:#2c3e50;
   padding-left: 15px;
   padding-right: 3rem;
+  outline: none;
 
   &:focus {
   border: 3px solid rgb(0, 255, 149);
