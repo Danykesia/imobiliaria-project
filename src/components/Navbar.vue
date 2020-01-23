@@ -33,9 +33,11 @@ export default {
       if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 80) {
         document.getElementById('navbar').style.background = 'transparent';
         document.getElementById('logo').style.width = '50px';
+        document.getElementById('navbar').style.boxShadow = 'none';
       } else {
         document.getElementById('navbar').style.background = 'rgb(219, 79, 14)';
         document.getElementById('logo').style.width = '50px';
+        document.getElementById('navbar').style.boxShadow = '0px 5px 8px 0px rgba(101, 82, 82, 0.71)';
       }
     };
   },
@@ -69,6 +71,8 @@ a {
   position: fixed;
   z-index: 1000;
   transition: 0.3s;
+  box-shadow: 0px 5px 8px 0px rgba(101, 82, 82, 0.71);
+
 
   &_logo {
     text-align: left;
