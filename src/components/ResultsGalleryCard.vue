@@ -1,9 +1,9 @@
 <template>
-  <div class="box">
+  <div class="box"><a href="#">
     <img class="result-img" :src="image">
     <h2><a href="#">{{title}}</a></h2>
     <p>{{description}}</p>
-  </div>
+  </a></div>
 </template>
 
 <script>
@@ -52,6 +52,11 @@ p {
   width: 100%;
   height: 200px;
   vertical-align: top;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
            @media (max-width: 575px) {

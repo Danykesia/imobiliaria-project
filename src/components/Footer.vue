@@ -15,9 +15,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(243, 239, 234);
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-top: auto;
+  padding: 1rem;
   border-top: 1px solid #ccc;
 }
 
@@ -28,7 +26,8 @@ p {
 }
 
 .social {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  display: flex;
 
   &_icons {
     margin-left: 0.8rem;
@@ -40,33 +39,9 @@ p {
   }
 }
 
-@media (max-width: 575px) {
-  p {
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
+@media (min-width: 768px) {
   .social {
-    font-size: 1rem;
-
-    &_icons {
-      margin-left: 0.5rem;
-      color: rgb(75, 78, 78);
-    }
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  p {
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-  .social {
-    font-size: 1rem;
-
-    &_icons {
-      margin-left: 0.5rem;
-      color: rgb(75, 78, 78);
-    }
+    font-size: 1.5rem;
   }
 }
 </style>

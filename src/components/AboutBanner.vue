@@ -13,7 +13,7 @@ h1 {
 .about-banner {
   display: flex;
   flex-direction: column;
-  height: 32vh;
+  height: 25vh;
   background-image: linear-gradient(to right bottom,
     rgba(166, 206, 204, 0.8),
     rgba(22, 51, 110, 0.8)),
@@ -22,41 +22,6 @@ h1 {
   background-repeat: no-repeat;
   justify-content: center;
   background-attachment: fixed;
-  margin-top: 2.5rem;
+  margin-top: 60px;
 }
-
- @media (max-width: 575px) {
-            .about-banner{
-              background-attachment: inherit;
-              height: 20vh;
-              max-width: 100%;
-            }
-          }
-           @media (min-width: 576px) and (max-width: 767px) {
-            .about-banner{
-              background-attachment: inherit;
-              height: 20vh;
-              max-width: 100%;
-            }
-          }
-          @media (min-width: 768px) and (max-width: 991px) {
-            .about-banner{
-              background-attachment: inherit;
-              height: 20vh;
-              max-width: 100%;
-            }
-          }
-          @media (min-width: 992px) and (max-width: 1199px) {
-            .about-banner {
-              height: 32vh;
-              background-attachment: inherit;
-              max-width: 100%;
-            }
-          }
-          @media (min-width: 1200px) {
-            .about-banner {
-              height: 32vh;
-              max-width: 100%;
-            }
-          }
 </style>
