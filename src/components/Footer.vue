@@ -1,6 +1,6 @@
 <template>
   <footer class="container">
-    <p>2019 - Todos os direitos reservados.</p>
+    <p>2020 - Todos os direitos reservados.</p>
     <div class="social">
       <a href="#"><font-awesome-icon class="social_icons" :icon="['fab', 'instagram']"/></a>
       <a href="#"><font-awesome-icon class="social_icons" :icon="['fab', 'facebook']"/></a>
