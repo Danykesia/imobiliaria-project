@@ -29,7 +29,7 @@
   background-repeat: no-repeat;
   justify-content: center;
   background-attachment: fixed;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .text-box {
