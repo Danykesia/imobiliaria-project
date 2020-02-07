@@ -1,38 +1,35 @@
 <template>
-  <div class="container-grid">
-    <ResultsGalleryCard :image="require('../assets/property.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga." />
-    <ResultsGalleryCard :image="require('../assets/property2.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property3.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property4.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property2.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property3.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
-    <ResultsGalleryCard :image="require('../assets/property4.jpg')" title="Title example"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Commodi, fuga."/>
+  <div class="container-grid" v-if="filteredResults.length > 0">
+    <ResultsGalleryCard
+      v-for="(result, index) in filteredResults"
+      :key="index"
+      :image="result.image"
+      :title="result.title"
+      :description="result.description" />
   </div>
+  <h2 class="no_results" v-else>No results found =/</h2>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import ResultsGalleryCard from '@/components/ResultsGalleryCard.vue';
 
 export default {
   components: {
     ResultsGalleryCard,
+  },
+  computed: {
+    ...mapState({
+      results: state => state.results,
+    }),
+    filteredResults() {
+      const query = this.$route.query.q;
+      if (!query || query.trim().length === 0) {
+        return this.results;
+      }
+      return this.results.filter(item => item.title.toLowerCase().includes(query.toLowerCase())
+        || item.description.toLowerCase().includes(query.toLowerCase()));
+    },
   },
 };
 </script>
@@ -42,6 +39,12 @@ export default {
   margin: 2rem auto;
   columns: 4;
   column-gap: 1.5rem;
+}
+
+.no_results {
+  text-align: center;
+  width: 100%;
+  padding: 5rem 0;
 }
 
            @media (max-width: 575px) {

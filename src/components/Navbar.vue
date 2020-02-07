@@ -10,10 +10,15 @@
       </li>
       <li>
         <div class="search-box">
-          <input class="search-box--txt" type="text" placeholder="Search..." />
-          <router-link class="search-box--btn" to="/search">
+          <input
+            class="search-box--txt"
+            type="text"
+            placeholder="Search..."
+            v-model="input"
+            @keyup.enter="search"/>
+          <button class="search-box--btn" @click="search">
             <font-awesome-icon icon="search" />
-          </router-link>
+          </button>
         </div>
         <div class="search-box-mob">
           <input class="search-box-mob--txt" type="text" placeholder="Search..." />
@@ -28,6 +33,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      input: '',
+    };
+  },
   mounted() {
     window.onscroll = function scrollFunction() {
       if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 80) {
@@ -40,6 +50,14 @@ export default {
         document.getElementById('navbar').style.boxShadow = '0px 5px 8px 0px rgba(101, 82, 82, 0.71)';
       }
     };
+  },
+  methods: {
+    search() {
+      const path = `/search?q=${this.input}`;
+      if (this.$route.fullPath !== path) {
+        this.$router.push(path);
+      }
+    },
   },
 };
 </script>
@@ -128,6 +146,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
   }
 
   &--txt {

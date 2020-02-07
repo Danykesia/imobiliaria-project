@@ -2,13 +2,31 @@
   <div class="search">
     <h1>Search here</h1>
     <div class="search_box">
-      <input placeholder="Search...">
-      <button type="button">
+      <input placeholder="Search..." v-model="input" @keyup.enter="search">
+      <button type="button" @click="search">
         <font-awesome-icon class="search_icon" icon="search"/>
       </button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      input: '',
+    };
+  },
+  methods: {
+    search() {
+      const path = `/search?q=${this.input}`;
+      if (this.$route.fullPath !== path) {
+        this.$router.push(path);
+      }
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 h1 {
